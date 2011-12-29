@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 Requires(post):	texlive-tetex
 
 %description
@@ -29,24 +27,12 @@ PDF documents (created automatically by dvipdfmx) work
 correctly. All font bundles now contain virtual Unicode
 subfonts.
 
-%pre
-    %_texmf_updmap_pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-    %_texmf_updmap_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_updmap_pre
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
-	%_texmf_updmap_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -1357,7 +1343,6 @@ subfonts.
 %doc %{_texmfdistdir}/doc/fonts/wadalab/mrj/README
 %doc %{_texmfdistdir}/doc/fonts/wadalab/wadalab-sampler.pdf
 %doc %{_texmfdistdir}/doc/fonts/wadalab/wadalab-sampler.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -1368,8 +1353,6 @@ subfonts.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
 mkdir -p %{buildroot}%{_texmf_updmap_d}
 cat > %{buildroot}%{_texmf_updmap_d}/wadalab <<EOF
 Map dgj.map
