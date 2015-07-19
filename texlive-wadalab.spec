@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-wadalab
 Version:	20110521
-Release:	9
+Release:	10
 Summary:	Wadalab (Japanese) font packages
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/wadalab
