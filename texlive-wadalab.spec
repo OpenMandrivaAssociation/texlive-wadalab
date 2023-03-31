@@ -1,6 +1,6 @@
 Name:		texlive-wadalab
 Version:	42428
-Release:	1
+Release:	2
 Summary:	Wadalab (Japanese) font packages
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/wadalab
