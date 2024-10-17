@@ -3,7 +3,7 @@ Version:	42428
 Release:	2
 Summary:	Wadalab (Japanese) font packages
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/wadalab
+URL:		https://www.ctan.org/tex-archive/fonts/wadalab
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/wadalab.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/wadalab.doc.r%{version}.tar.xz
